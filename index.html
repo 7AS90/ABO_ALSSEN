@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𓅇 حزب الشغب - Clan</title>
+    
+    <!-- خط القاهرة الاحترافي المميز -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            /* وضع الخلفية الفخمة الجديدة التي أرسلتها وتثبيتها */
+            background: linear-gradient(rgba(15, 14, 14, 0.75), rgba(15, 14, 14, 0.85)), 
+                        url('https://images.unsplash.com/photo-1567996293198-c7bc7c5d5ff7?q=80&w=1170&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover;
+            color: #FFFD8F;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        /* حاوية المحتوى الرئيسية بتصميم زجاجي مظلم وهيبة عالية */
+        .container {
+            text-align: center;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            width: 100%;
+            max-width: 440px;
+            padding: 40px 30px;
+            background: rgba(15, 14, 14, 0.65);
+            border-radius: 28px;
+            border: 1px solid rgba(255, 253, 143, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(255, 253, 143, 0.03);
+        }
+
+        /* صورة الشعار الدائرية الكبيرة بحركة طفو ملكية */
+        .logo-img {
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(255, 253, 143, 0.25) 0%, rgba(0, 0, 0, 0.6) 100%);
+            border: 3px solid #FFFD8F;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            animation: float 4s ease-in-out infinite;
+            box-shadow: 0 0 35px rgba(255, 253, 143, 0.3), inset 0 0 25px rgba(255, 253, 143, 0.15);
+            aspect-ratio: 1 / 1;
+        }
+
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* عنوان حزب الشغب بتأثير بريق ذهبي متحرك */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #FFFD8F, #FFD700, #FFF59D, #FFFD8F);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s linear infinite;
+            text-shadow: 0 0 25px rgba(255, 253, 143, 0.3);
+            letter-spacing: 1px;
+        }
+
+        /* زر تشغيل الموسيقى بتصميم نيون هيبة */
+        .music-btn {
+            padding: 14px 35px;
+            background: transparent;
+            color: #FFFD8F;
+            border: 2px solid #FFFD8F;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: inset 0 0 10px rgba(255, 253, 143, 0.1), 0 0 15px rgba(255, 253, 143, 0.1);
+            width: 100%;
+            max-width: 290px;
+            letter-spacing: 1px;
+        }
+
+        .music-btn:hover {
+            background: linear-gradient(45deg, #FFFD8F, #FFD700);
+            color: #0F0E0E;
+            box-shadow: 0 0 30px rgba(255, 253, 143, 0.5);
+            transform: scale(1.03);
+        }
+
+        /* حاوية الروابط */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        /* أزرار الروابط المصقولة والفخمة */
+        .social-link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            padding: 16px;
+            border-radius: 16px;
+            background: rgba(15, 14, 14, 0.5);
+            color: #FFFD8F;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 1px solid rgba(255, 253, 143, 0.15);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* حجم الأيقونات الكبير الموحد */
+        .social-icon {
+            width: 34px;
+            height: 34px;
+            object-fit: contain;
+            border-radius: 6px;
+        }
+
+        /* الرابط الاحتياطي المميز بلون بريق إضافي خفيف */
+        .social-link-btn.backup {
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            background: rgba(255, 215, 0, 0.03);
+        }
+
+        .social-link-btn:hover {
+            background: linear-gradient(45deg, #FFFD8F, #FFD700);
+            color: #0F0E0E;
+            box-shadow: 0 12px 30px rgba(255, 215, 0, 0.45);
+            font-weight: 900;
+            transform: translateY(-4px);
+            border-color: #FFD700;
+        }
+
+        /* تحويل لون الأيقونات للأسود عند الهوفر لتندمج مع النص والزر اليمين */
+        .social-link-btn:hover .social-icon {
+            filter: brightness(0);
+        }
+
+        .social-link-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* حركة الطفو اللطيفة للشعار */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* حركة البريق اللوني في الاسم للتميز */
+        @keyframes gradientShift {
+            to { background-position: 200% center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- مشغل الصوت المخفي المعتمد من طرفكم -->
+    <audio id="audio" loop>
+        <source src="https://files.catbox.moe/l2kiv3.mp4" type="audio/mp4">
+    </audio>
+
+    <div class="container">
+        
+        <!-- صورة الشعار الرسمية الكبيرة -->
+        <div class="logo-img">
+            <img src="https://p16-common-sign.tiktokcdn.com/tos-alisg-avt-0068/5f5132e8e1cae2ea1d6c57875c7a5350~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=982bd826&x-expires=1780034400&x-signature=36JsKVCq6ESAZ%2F%2FDMitBUdgBH74%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=my2" alt="حزب الشغب">
+        </div>
+
+        <!-- الاسم الرسمي -->
+        <h1>𓅇 حزب الشغب 𓅇</h1>
+        
+        <!-- زر تشغيل الصوت -->
+        <button class="music-btn" id="musicBtn" onclick="toggleAudio()">تشغيل الموسيقى 🎵</button>
+        
+        <!-- قائمة الروابط الرسمية المدعومة بالأيقونات المكبّرة والشفافة -->
+        <div class="links-container">
+            
+            <!-- رابط الديسكورد بالأيقونة الجديدة الفخمة من الـ Xbox Live التي أرسلتها -->
+            <a class="social-link-btn" href="https://discord.gg/W8UKUK9fkD" target="_blank">
+                <img class="social-icon" src="https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHM0OYfiFeMI2p9MWie0CvL99U4GA1gf6_kayTt_kBblFwHwo8BW8JXlqfnYxKPmmBevsdZpJiIhrXJKvOSYipsYbqdUBBn6r6Hb.keWYwuyu5QJ84NCtr5ij3JMrlPglnBeeDch3kJBTCQneZnfl9dA-&format=source" alt="Discord">
+                الديسكورد الرسمي
+            </a>
+            
+            <!-- رابط اليوتيوب الأساسي -->
+            <a class="social-link-btn" href="https://youtube.com/@7as90" target="_blank">
+                <img class="social-icon" src="https://static.vecteezy.com/system/resources/previews/018/930/572/non_2x/youtube-logo-youtube-icon-transparent-free-png.png" alt="YouTube">
+                YouTube الأساسية
+            </a>
+            
+            <!-- رابط اليوتيوب الاحتياطي -->
+            <a class="social-link-btn backup" href="https://www.youtube.com/@7as70" target="_blank">
+                <img class="social-icon" src="https://static.vecteezy.com/system/resources/previews/018/930/572/non_2x/youtube-logo-youtube-icon-transparent-free-png.png" alt="YouTube">
+                YouTube الاحتياطية ⚔️
+            </a>
+            
+            <!-- رابط التيك توك -->
+            <a class="social-link-btn" href="https://www.tiktok.com/@f9i6" target="_blank">
+                <img class="social-icon" src="https://store-images.s-microsoft.com/image/apps.4784.13634052595610511.c45457c9-b4af-46b0-8e61-8d7c0aec3f56.3d483847-81a6-4078-8f83-a35c5c38ee92" alt="TikTok">
+                التيك توك الرسمي
+            </a>
+            
+            <!-- رابط الانستغرام -->
+            <a class="social-link-btn" href="https://www.instagram.com/7as_shagab/?__pwa=1" target="_blank">
+                <img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1280px-Instagram_icon.png" alt="Instagram">
+                الانستغرام الرسمي
+            </a>
+            
+        </div>
+
+    </div>
+
+    <!-- سكربت التحكم بالصوت الذكي -->
+    <script>
+        let audio = document.getElementById("audio");
+        let btn = document.getElementById("musicBtn");
+        let playing = false;
+
+        function toggleAudio(){
+            if(!playing){
+                audio.play().catch(e => console.log("المتصفح يطلب تفاعل لتشغيل الصوت"));
+                playing = true;
+                btn.innerHTML = "إيقاف المؤثرات ⏸";
+            } else {
+                audio.pause();
+                playing = false;
+                btn.innerHTML = "تشغيل الموسيقى 🎵";
+            }
+        }
+    </script>
+</body>
+</html>
